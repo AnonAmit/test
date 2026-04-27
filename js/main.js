@@ -47,3 +47,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+
+/* ----------------------------------------------------------
+   Video Modal Functions
+---------------------------------------------------------- */
+function openVideoModal(videoId) {
+    const modal = document.getElementById('video-modal');
+    const iframe = document.getElementById('video-iframe');
+    if (modal && iframe) {
+        iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('video-modal');
+    const iframe = document.getElementById('video-iframe');
+    if (modal && iframe) {
+        modal.classList.add('hidden');
+        iframe.src = '';
+        document.body.style.overflow = '';
+    }
+}
