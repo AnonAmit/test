@@ -1,0 +1,24 @@
+/* ============================================================
+   Darpan Studio — Custom Styles
+   All Tailwind configuration lives in js/tailwind.config.js
+   ============================================================ */
+
+/* --- Material Symbols icon weight defaults --- */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* --- Hide scrollbar utility (used on carousels) --- */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* --- Heritage background motif mask --- */
+.heritage-mask {
+    mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+    opacity: 0.03;
+}
+
+/* --- Minimum viewport height --- */
+body {
+    min-height: max(884px, 100dvh);
+}

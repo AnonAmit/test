@@ -1,369 +1,312 @@
-<!DOCTYPE html><html class="dark" lang="en"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Manrope:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "surface-container-low": "#1c1b1b",
-                        "on-secondary": "#5f1410",
-                        "on-secondary-fixed": "#410001",
-                        "tertiary": "#bcc3ff",
-                        "primary": "#ffb4a8",
-                        "inverse-on-surface": "#313030",
-                        "tertiary-container": "#0025c8",
-                        "on-secondary-container": "#ff9f93",
-                        "error-container": "#93000a",
-                        "on-error": "#690005",
-                        "outline-variant": "#5a403c",
-                        "on-primary": "#690000",
-                        "inverse-primary": "#b52619",
-                        "tertiary-fixed": "#dfe0ff",
-                        "surface-bright": "#393939",
-                        "surface": "#131313",
-                        "on-background": "#e5e2e1",
-                        "surface-tint": "#ffb4a8",
-                        "surface-container-high": "#2a2a2a",
-                        "on-surface-variant": "#e3beb8",
-                        "on-secondary-fixed-variant": "#7e2b23",
-                        "on-primary-fixed": "#410000",
-                        "secondary-container": "#812d26",
-                        "on-primary-fixed-variant": "#920703",
-                        "primary-fixed-dim": "#ffb4a8",
-                        "surface-variant": "#353534",
-                        "on-tertiary": "#001a98",
-                        "secondary": "#ffb4aa",
-                        "surface-container-highest": "#353534",
-                        "on-tertiary-fixed-variant": "#0d2ccc",
-                        "on-primary-container": "#ff907f",
-                        "background": "#131313",
-                        "secondary-fixed": "#ffdad5",
-                        "outline": "#aa8984",
-                        "on-tertiary-container": "#9ea9ff",
-                        "inverse-surface": "#e5e2e1",
-                        "tertiary-fixed-dim": "#bcc3ff",
-                        "surface-container": "#201f1f",
-                        "surface-dim": "#131313",
-                        "error": "#ffb4ab",
-                        "primary-fixed": "#ffdad4",
-                        "secondary-fixed-dim": "#ffb4aa",
-                        "on-tertiary-fixed": "#000d60",
-                        "on-surface": "#e5e2e1",
-                        "surface-container-lowest": "#0e0e0e",
-                        "on-error-container": "#ffdad6",
-                        "primary-container": "#8b0000"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "fontFamily": {
-                        "headline": ["Epilogue"],
-                        "body": ["Manrope"],
-                        "label": ["Manrope"]
-                    }
-                }
-            }
-        }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .heritage-mask {
-            mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
-            opacity: 0.03;
-        }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Darpan Studio | Gorakhpur's Premier Visual Storytellers</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&family=Manrope:wght@300;400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <!-- External Tailwind Config -->
+    <script src="js/tailwind.config.js"></script>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
+
 <!-- TopAppBar -->
 <nav class="bg-[#131313]/80 backdrop-blur-lg text-[#e5e2e1] font-['Epilogue'] tracking-tight docked full-width top-0 sticky bg-gradient-to-b from-[#1c1c1c] to-transparent shadow-[0_10px_30px_rgba(0,0,0,0.5)] z-50">
-<div class="flex justify-between items-center w-full px-6 h-20">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-red-700 dark:text-red-600 active:scale-95 transition-transform" data-icon="menu" style="">menu</span>
-</div>
-<span class="text-lg font-black tracking-[0.3em] uppercase text-[#e5e2e1]" style="">Darpan Studio</span>
-<button class="text-red-700 dark:text-red-600 font-bold hover:text-red-500 transition-all duration-300 active:scale-95 text-sm uppercase tracking-widest" style="">Call Now</button>
-</div>
+    <div class="flex justify-between items-center w-full px-6 h-20">
+        <div class="flex items-center gap-4">
+            <span id="menu-icon" class="material-symbols-outlined text-red-700 dark:text-red-600 active:scale-95 transition-transform cursor-pointer" data-icon="menu">menu</span>
+        </div>
+        <span class="text-lg font-black tracking-[0.3em] uppercase text-[#e5e2e1]">Darpan Studio</span>
+        <a href="tel:+918354038561" class="text-red-700 dark:text-red-600 font-bold hover:text-red-500 transition-all duration-300 active:scale-95 text-sm uppercase tracking-widest">Call Now</a>
+    </div>
 </nav>
+
 <main class="relative overflow-x-hidden">
-<!-- Hero Section -->
-<section class="relative h-[751px] flex flex-col justify-end px-6 pb-20 overflow-hidden">
-<div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover grayscale-[20%] brightness-50" data-alt="dramatic cinematic wide shot of a royal indian wedding couple standing in a historic palace corridor with golden sunset light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt-hUINbaPz8tGMJ6J5hHfgl73qVq82iUrtBWzZUT2Ey9uPsH-36dqJ_FWpimlJZClkqB975pvxnrXTk2gUbQ_hp8gOYmjjX2SVJq_yWvdCfOZlnU8P0NYdGyysMBfPJhbRyR0wPbyQnG6HoxNXFjrCr2VBT1wzF3jh2IKaHBJRsHxeVxHUumawRX-rkdxPQ4-RkvjKB_wOu4j_UVz7UfrMoXpgHx9z1QbnQWMybwAonVFnd9xOSv96F1cR3ACoiaWyYahwQAiGTo" style="">
-<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-black/40"></div>
-</div>
-<div class="relative z-10 space-y-4">
-<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary-container/20 border border-primary/20 rounded-full">
-<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-<span class="text-[10px] font-label uppercase tracking-[0.2em] text-primary" style="">Now Booking 2024-25</span>
-</div>
-<h1 class="font-headline text-5xl font-black leading-[1.1] tracking-tight text-on-surface" style="">
-                    Capturing the <span class="text-primary italic" style="">Soul</span> of Your Celebration
-                </h1>
-<p class="font-body text-on-surface-variant text-lg max-w-[90%] leading-relaxed" style="">
-                    Preserving the heritage of love through a cinematic lens. Gorakhpur's premier visual storytellers.
-                </p>
-<div class="pt-6">
-<button class="bg-primary-container text-on-background px-8 py-4 rounded-full font-label text-sm font-bold uppercase tracking-widest shadow-2xl active:scale-95 transition-all" style="">
-                        Reserve Your Date
-                    </button>
-</div>
-</div>
-</section>
-<!-- Heritage Background Motif (Subtle) -->
-<div class="absolute top-[795px] left-0 w-full h-full heritage-mask pointer-events-none z-0">
-<div class="grid grid-cols-4 gap-8 p-12">
-<span class="material-symbols-outlined text-9xl opacity-10" data-icon="settings_suggest" style="">settings_suggest</span>
-<span class="material-symbols-outlined text-9xl opacity-10" data-icon="spa" style="">spa</span>
-<span class="material-symbols-outlined text-9xl opacity-10" data-icon="filter_vintage" style="">filter_vintage</span>
-<span class="material-symbols-outlined text-9xl opacity-10" data-icon="flare" style="">flare</span>
-</div>
-</div>
-<!-- Wedding Films (Carousel) -->
-<section class="py-20 relative z-10">
-<div class="px-6 mb-8 flex justify-between items-end">
-<div>
-<span class="text-primary font-label text-[10px] uppercase tracking-[0.3em]" style="">Cinematography</span>
-<h2 class="font-headline text-3xl font-bold mt-2" style="">Wedding Films</h2>
-</div>
-<span class="material-symbols-outlined text-primary" data-icon="arrow_forward" style="">arrow_forward</span>
-</div>
-<div class="flex overflow-x-auto hide-scrollbar gap-6 px-6 pb-4">
-<!-- Film Card 1 -->
-<div class="flex-none w-[85%] relative rounded-xl overflow-hidden group">
-<img class="aspect-[9/16] w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="cinematic video still of an indian bride in red lehenga looking through a window with soft morning haze" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxC4Jm_GxVgv9fpwzfpm7UIP9FPgTqM5EzTg9z5R3q0ObJNS6135JmonHhwrsfKSeQQxbV4nWzLQ3RTOXOexMWAojF_Uzqw4VvUaWmojIUhLeDRhJyzXTIdkpKd02EU9HSV61aXQej9WKScO9_fkYhXtlrr1jmqEpFlIyEEOXxxoLnsskbCB20ANCS2-Z2i8WpRf3HJtGLpoU7vm7KEDRGtegz_AIDDjDJ4YMo7cG414KLEmrMbv82Fee1nf8_zVyTgPjf-i9Nxik" style="">
-<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent flex flex-col justify-end p-6">
-<p class="text-xs font-label uppercase tracking-widest text-primary mb-1" style="">Traditional / Royal</p>
-<h3 class="font-headline text-xl font-bold" style="">The Eternal Vow: Kabir &amp; Ananya</h3>
-</div>
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20">
-<span class="material-symbols-outlined text-white text-3xl" data-icon="play_arrow" data-weight="fill" style="">play_arrow</span>
-</div>
-</div>
-</div>
-<!-- Film Card 2 -->
-<div class="flex-none w-[85%] relative rounded-xl overflow-hidden group">
-<img class="aspect-[9/16] w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="candid close-up of a groom during haldi ceremony with yellow flowers and joyful expressions" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4GOHApNVejNVchclxyCcTRL7AAr8j3uP9EQYUSXCwA6UE2gsvPDg4-g9q97brfeW5V60wNb2Se8FYaH44kSC78shJGUNfpjPgEpesaaBeis8B2flEKjKwqvW7EZRfNG3WHQXMKknsey2E0gD671ApWuz_-4bsLxR0KQsQ2dwPyrvKe8Omyxuh9xi0EoquUn8HoiGsgOBPBYR29aIPeHD8Nn4Q3ee0x9mtYlZOqCpWbWkxrY9jq5P5xHIN9A2FLXUDfLbTH72mTJU" style="">
-<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent flex flex-col justify-end p-6">
-<p class="text-xs font-label uppercase tracking-widest text-primary mb-1" style="">Candid / Modern</p>
-<h3 class="font-headline text-xl font-bold" style="">Laughter &amp; Light: Rohan &amp; Siya</h3>
-</div>
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20">
-<span class="material-symbols-outlined text-white text-3xl" data-icon="play_arrow" data-weight="fill" style="">play_arrow</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Wedding Moments (Asymmetric Grid) -->
-<section class="py-20 bg-surface-container-low relative">
-<div class="px-6 mb-12">
-<span class="text-primary font-label text-[10px] uppercase tracking-[0.3em]" style="">Photography</span>
-<h2 class="font-headline text-3xl font-bold mt-2" style="">Wedding Moments</h2>
-</div>
-<div class="grid grid-cols-2 gap-4 px-6">
-<div class="space-y-4">
-<div class="rounded-lg overflow-hidden h-64 relative group">
-<img class="w-full h-full object-cover" data-alt="close up of intricate henna design on brides hands with soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUmQ9ItMbhWi1q5QRC7piNg9C4RVrCUM_qP57GbmTZOEhdfR3MVfxcyusOIAqCAt6ocDctBL1977KYaY3qEdVuLEf2ylB2nNbkcy3BOzTqSVpRg05sL4TUtKS5_mb1vRESjD5n6eBoObLVdOtXTsPho3UBjpO1UBUQyn-c_ZFGnudwVTojuD7Jvk-mXzkt_oSRKPdQ2gA4LUd6OGjk18ipLPDYCF6uET1v17xedPRH5h4j8CXCNIkXEr8zDJqa1tjeGMew5TfAF-U" style="">
-</div>
-<div class="rounded-lg overflow-hidden h-48 relative group">
-<img class="w-full h-full object-cover" data-alt="vibrant indian wedding garlands of marigold and roses in shallow depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfI6WwLPvm6PAj7TyQQcVHUcqu6h_-Dy6bddnkwmnpAbMNS1Ge2jAfpfoR-KROSRoTlq3gf-tbr0gyHeWuUfh3YMB9Ou5t8GDjXaewbprjNaqI3SRdoSXSB2K7u8MHOHpgA6LO31-sjLnbIPtZ9qPTP7qgIpbY-oKuk88d01dJuI7YchaPAGOa-e5sUkxuYnPFWCPDCvLiENujd7XNoyV4PVxIVn-r_uZEtUP2STSLno-q7DrBlOG8OTWuWjJcbbFFnvUGwSv96V8" style="">
-</div>
-</div>
-<div class="space-y-4 pt-8">
-<div class="rounded-lg overflow-hidden h-48 relative group">
-<img class="w-full h-full object-cover" data-alt="indian groom in traditional sherwani adjusting his turban in front of a mirror" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY2hS65K8nhk7EKQxbU8dsYnZh9Nn5_X247kwdiRCp3Wyablw_jKImrAhzcjJKT640QfKrNNnAXiYtqer-OF3WNSpxbQQU09zmGdJgnN3ex_vGTkTT60U-lmJ3aqAnyZEUs789c8BA_7HYhqPsB-bdLsVq7XWniFhFtcXKc4tPj8poEru6QDs7-st5LV0KN4OIfaGH1Mr5KOTwMsMb3z18qPk0RvatWxRva3yRBWdbT4q6fNQNf28nR3BZE7NVevsBIu2K3j4tbfM" style="">
-</div>
-<div class="rounded-lg overflow-hidden h-64 relative group">
-<img class="w-full h-full object-cover" data-alt="royal palace architecture at night with warm decorative lighting for a wedding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGspwSnfu18TeFgSGfFg-AnIRY6GL4O64IPq0p6ZOR0oEcd-JWjHjs9QrW-BPJl36nmrrPP9obp_et1Li5K5SpfhcHXNn_7l1eRtfSuSCb610Vs92l1To7Ewi2UEEWOWV6FZadWGlRcTDRhzv9uyMo5Mq6bgAL-X6MGBj_De2QPPWeailU9p-Sv2gp8juFllPmJByLNFprhRGLG1RPSokcEI8FmZZIhPQ92YsT-a0VKZNfuUVRukqUHnv_Xy2GqDpuEexNz3FnqFI" style="">
-</div>
-</div>
-</div>
-<div class="px-6 mt-12 text-center">
-<button class="text-on-surface border border-outline-variant/30 px-8 py-3 rounded-full font-label text-[10px] uppercase tracking-widest hover:border-primary transition-colors" style="">
-                    View Full Gallery
-                </button>
-</div>
-</section>
-<!-- Bespoke Albums & Frames -->
-<section class="py-20 px-6">
-<div class="mb-12 text-center">
-<span class="text-primary font-label text-[10px] uppercase tracking-[0.3em]" style="">Tangible Memories</span>
-<h2 class="font-headline text-3xl font-bold mt-2" style="">The Heirloom Collection</h2>
-</div>
-<div class="space-y-12">
-<!-- Albums -->
-<div class="bg-surface-container-high rounded-3xl overflow-hidden flex flex-col">
-<img class="h-64 w-full object-cover" data-alt="luxury leather-bound wedding album with embossed gold lettering on a dark wooden surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs_a4e8rjWPLJz8o8HW0uKj5GY6mn6Pq2LwB_yEEK_PyYOcn5hEwCyDMsUUvwhHBcZfS5_3zRwZH5d-0F3uuDGCectx_eVSWchgc9s2uLiJK7I5pqYDFaWbiyDxpAttpYOZZmRnSLoKZ3rwzqRwPpbVHGz6shtQ75RK3y2H0Q4A5imtUWTB-rmCrTpESVMt3nxxO969OLHqGvbdlpde7f3yIrk3fRhZ1ELQKX3745TEVECcrtu-l-OmfO3tZ-K7dFgjB3BW2z6OZ4" style="">
-<div class="p-8">
-<h3 class="font-headline text-2xl font-bold mb-4" style="">Bespoke Albums</h3>
-<p class="text-on-surface-variant font-body mb-6 leading-relaxed" style="">Handcrafted Italian leather albums with archival-grade paper, designed to last for generations.</p>
-<div class="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest">
-<span class="" style="">Explore Textures</span>
-<span class="material-symbols-outlined text-sm" data-icon="north_east" style="">north_east</span>
-</div>
-</div>
-</div>
-<!-- Frames -->
-<div class="bg-surface-container-high rounded-3xl overflow-hidden flex flex-col">
-<img class="h-64 w-full object-cover" data-alt="museum quality canvas wedding portrait hanging on a minimalist dark gallery wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4bD8GMkh8Ff3yFdv29hyTlyNPf6NuLkjdh9qKkOaYX3rTse1VBebMxfcGMMZtl4wuvlGuEJ-Oxouk8EbRZUQ1VW6-gD44bwePm6Zsnss_-oOaUS73N8LXdHyT9ZDPdFtVClzqDDD3tNy7NjD068Ib-Js66XF-mYsINnMyx-1Ue3SmWdNiBJpDm6qqLMzzf4Zrz-kOgzGEk3b6Ri8hj6QtJ1NVAcGq-SxkP-oMDdAfHi0iMj9ahE6bo3hG0EG8ae8CzKJ1mHC_ZVg" style="">
-<div class="p-8">
-<h3 class="font-headline text-2xl font-bold mb-4" style="">Handcrafted Frames</h3>
-<p class="text-on-surface-variant font-body mb-6 leading-relaxed" style="">Museum-grade archival framing options including deep-set canvases and premium acrylic finishes.</p>
-<div class="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest">
-<span class="" style="">View Finishes</span>
-<span class="material-symbols-outlined text-sm" data-icon="north_east" style="">north_east</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Wedding Collections (Pricing) -->
-<section class="py-20 bg-surface-container-lowest">
-<div class="px-6 mb-12">
-<span class="text-primary font-label text-[10px] uppercase tracking-[0.3em]" style="">Pricing &amp; Plans</span>
-<h2 class="font-headline text-3xl font-bold mt-2" style="">Wedding Collections</h2>
-</div>
-<div class="px-6 flex overflow-x-auto hide-scrollbar gap-6 pb-8">
-<!-- Package 1 -->
-<div class="flex-none w-[80%] bg-surface-container border border-outline-variant/10 p-8 rounded-3xl relative">
-<h3 class="font-headline text-xl font-bold mb-1" style="">Essential</h3>
-<div class="text-3xl font-black text-primary mb-6" style="">Basic<span class="text-sm font-normal text-on-surface-variant ml-2" style="">/ event</span></div>
-<ul class="space-y-4 mb-8 text-sm text-on-surface-variant">
-<li class="flex items-center gap-3" style=""><span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle" style="">check_circle</span> 6 Hours Coverage</li>
-<li class="flex items-center gap-3" style=""><span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle" style="">check_circle</span> High-Res Photos</li>
-<li class="flex items-center gap-3" style=""><span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle" style="">check_circle</span> Online Gallery</li>
-</ul>
-<button class="w-full py-3 border border-outline-variant rounded-full font-label text-xs uppercase tracking-widest" style="">Select Plan</button>
-</div>
-<!-- Package 2 - Featured -->
-<div class="flex-none w-[80%] bg-primary-container p-8 rounded-3xl relative shadow-[0_20px_50px_rgba(139,0,0,0.3)]">
-<div class="absolute -top-3 right-8 bg-on-background text-primary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest" style="">Most Popular</div>
-<h3 class="font-headline text-xl font-bold mb-1" style="">Heirloom</h3>
-<div class="text-3xl font-black text-on-background mb-6" style="">Gold<span class="text-sm font-normal text-on-background/70 ml-2" style="">/ event</span></div>
-<ul class="space-y-4 mb-8 text-sm text-on-background/90">
-<li class="flex items-center gap-3" style=""><span class="material-symbols-outlined text-on-background text-lg" data-icon="check_circle" style="">check_circle</span> Full Day Coverage</li>
-<li class="flex items-center gap-3" style=""><span class="material-symbols-outlined text-on-background text-lg" data-icon="check_circle" style="">check_circle</span> 5 Min Cinematic Film</li>
-<li class="flex items-center gap-3" style=""><span class="material-symbols-outlined text-on-background text-lg" data-icon="check_circle" style="">check_circle</span> 12" Handcrafted Album</li>
-</ul>
-<button class="w-full py-3 bg-on-background text-primary-container rounded-full font-label text-xs uppercase tracking-widest font-bold" style="">Select Plan</button>
-</div>
-<!-- Package 3 -->
-<div class="flex-none w-[80%] bg-surface-container border border-outline-variant/10 p-8 rounded-3xl relative">
-<h3 class="font-headline text-xl font-bold mb-1" style="">Royal Legacy</h3>
-<div class="text-3xl font-black text-primary mb-6" style=""><span class="text-sm font-normal text-on-surface-variant ml-2" style=""><font color="#ffb4a8"><span style="font-size: 30px;"><b>Platinum</b></span></font>/ event</span></div>
-<ul class="space-y-4 mb-8 text-sm text-on-surface-variant">
-<li class="flex items-center gap-3" style=""><span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle" style="">check_circle</span> Multi-Day Coverage</li>
-<li class="flex items-center gap-3" style=""><span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle" style="">check_circle</span> 15 Min Feature Film</li>
-<li class="flex items-center gap-3" style=""><span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle" style="">check_circle</span> 2 Parent Albums</li>
-</ul>
-<button class="w-full py-3 border border-outline-variant rounded-full font-label text-xs uppercase tracking-widest" style="">Select Plan</button>
-</div>
-</div>
-</section>
-<!-- Reviews -->
-<section class="py-20 px-6 overflow-hidden">
-<div class="flex items-center gap-4 mb-12">
-<div class="h-[1px] flex-1 bg-outline-variant/20"></div>
-<h2 class="font-headline text-2xl font-bold uppercase tracking-widest opacity-50" style="">Testimonials</h2>
-<div class="h-[1px] flex-1 bg-outline-variant/20"></div>
-</div>
-<div class="bg-surface-container-high p-8 rounded-3xl relative">
-<span class="material-symbols-outlined text-primary-container/20 text-8xl absolute top-4 left-4" data-icon="format_quote" style="">format_quote</span>
-<p class="font-body text-xl italic text-on-surface leading-relaxed relative z-10" style="">
-                    "Darpan Studio didn't just take photos; they captured the emotions we didn't even know we were showing. Looking at our album is like reliving the magic all over again."
-                </p>
-<div class="mt-8 flex items-center gap-4 relative z-10">
-<div class="w-12 h-12 rounded-full bg-primary-container/40 flex items-center justify-center font-bold text-primary" style="">S</div>
-<div>
-<p class="font-bold" style="">Shikha &amp; Rahul</p>
-<p class="text-xs text-on-surface-variant" style="">Wedding in Lucknow</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Contact Form -->
-<section class="py-20 bg-surface-container-low px-6">
-<div class="text-center mb-12">
-<h2 class="font-headline text-4xl font-black mb-4" style="">Begin Your Legacy</h2>
-<p class="text-on-surface-variant max-w-xs mx-auto" style="">Tell us about your celebration, and let's create something timeless together.</p>
-</div>
-<form class="space-y-8 max-w-md mx-auto">
-<div class="relative">
-<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 transition-colors placeholder:text-on-surface-variant/40" placeholder="Full Name" type="text">
-</div>
-<div class="relative">
-<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 transition-colors placeholder:text-on-surface-variant/40" placeholder="Email Address" type="email">
-</div>
-<div class="relative">
-<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 transition-colors text-on-surface-variant/40" placeholder="Wedding Date" type="date">
-</div>
-<div class="relative">
-<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 transition-colors placeholder:text-on-surface-variant/40" placeholder="Tell us your story..." rows="3"></textarea>
-</div>
-<button class="w-full bg-primary-container py-5 rounded-full font-label text-sm font-bold uppercase tracking-[0.2em] shadow-xl mt-8" style="">Send Inquiry</button>
-</form>
-<div class="mt-20 text-center space-y-4">
-<p class="font-label text-[10px] uppercase tracking-widest text-primary" style="">Visit Our Studio</p>
-<p class="text-on-surface-variant font-body" style="">Main Civil Lines Road,<br>Gorakhpur, Uttar Pradesh 273001</p>
-<div class="flex justify-center gap-6 pt-4">
-<span class="material-symbols-outlined text-on-surface-variant" data-icon="phone_in_talk" style="">phone_in_talk</span>
-<span class="material-symbols-outlined text-on-surface-variant" data-icon="alternate_email" style="">alternate_email</span>
-<span class="material-symbols-outlined text-on-surface-variant" data-icon="map" style="">map</span>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="bg-[#131313] w-full relative py-12 bg-[#0a0a0a] flex flex-col items-center text-center gap-6 px-8 mb-20">
-<span class="font-['Epilogue'] text-xl font-bold text-red-700" style="">VIVAH</span>
-<div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
-<a class="text-[#e5e2e1]/40 font-['Manrope'] text-xs font-light tracking-wide hover:text-red-500 underline underline-offset-4" href="#" style="">The Portfolio</a>
-<a class="text-[#e5e2e1]/40 font-['Manrope'] text-xs font-light tracking-wide hover:text-red-500 underline underline-offset-4" href="#" style="">Artist Bio</a>
-<a class="text-[#e5e2e1]/40 font-['Manrope'] text-xs font-light tracking-wide hover:text-red-500 underline underline-offset-4" href="#" style="">Inquiry</a>
-<a class="text-[#e5e2e1]/40 font-['Manrope'] text-xs font-light tracking-wide hover:text-red-500 underline underline-offset-4" href="#" style="">Privacy</a>
-</div>
-<p class="font-['Manrope'] text-xs font-light tracking-wide text-[#e5e2e1]/50 max-w-xs leading-relaxed" style="">
-                © 2024 VIVAH CINEMATIC HEIRLOOM. ESTABLISHED IN GORAKHPUR, UP.
+    <!-- Hero Section -->
+    <section class="relative h-[751px] flex flex-col justify-end px-6 pb-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img class="w-full h-full object-cover grayscale-[20%] brightness-50" alt="dramatic cinematic wide shot of a royal indian wedding couple" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt-hUINbaPz8tGMJ6J5hHfgl73qVq82iUrtBWzZUT2Ey9uPsH-36dqJ_FWpimlJZClkqB975pvxnrXTk2gUbQ_hp8gOYmjjX2SVJq_yWvdCfOZlnU8P0NYdGyysMBfPJhbRyR0wPbyQnG6HoxNXFjrCr2VBT1wzF3jh2IKaHBJRsHxeVxHUumawRX-rkdxPQ4-RkvjKB_wOu4j_UVz7UfrMoXpgHx9z1QbnQWMybwAonVFnd9xOSv96F1cR3ACoiaWyYahwQAiGTo">
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-black/40"></div>
+        </div>
+        <div class="relative z-10 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-primary-container/20 border border-primary/20 rounded-full">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                <span class="text-[10px] font-label uppercase tracking-[0.2em] text-primary">Now Booking 2024-25</span>
+            </div>
+            <h1 class="font-headline text-5xl font-black leading-[1.1] tracking-tight text-on-surface">
+                Capturing the <span class="text-primary italic">Soul</span> of Your Celebration
+            </h1>
+            <p class="font-body text-on-surface-variant text-lg max-w-[90%] leading-relaxed">
+                Preserving the heritage of love through a cinematic lens. Gorakhpur's premier visual storytellers.
             </p>
-</footer>
+            <div class="pt-6">
+                <a href="https://wa.me/918354038561" target="_blank" class="inline-block bg-primary-container text-on-background px-8 py-4 rounded-full font-label text-sm font-bold uppercase tracking-widest shadow-2xl active:scale-95 transition-all">
+                    Reserve Your Date
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Background Motif (Subtle) -->
+    <div class="absolute top-[795px] left-0 w-full h-full heritage-mask pointer-events-none z-0">
+        <div class="grid grid-cols-4 gap-8 p-12">
+            <span class="material-symbols-outlined text-9xl opacity-10" data-icon="settings_suggest">settings_suggest</span>
+            <span class="material-symbols-outlined text-9xl opacity-10" data-icon="spa">spa</span>
+            <span class="material-symbols-outlined text-9xl opacity-10" data-icon="filter_vintage">filter_vintage</span>
+            <span class="material-symbols-outlined text-9xl opacity-10" data-icon="flare">flare</span>
+        </div>
+    </div>
+
+    <!-- Wedding Films (Carousel) -->
+    <section class="py-20 relative z-10">
+        <div class="px-6 mb-8 flex justify-between items-end">
+            <div>
+                <span class="text-primary font-label text-[10px] uppercase tracking-[0.3em]">Cinematography</span>
+                <h2 class="font-headline text-3xl font-bold mt-2">Wedding Films</h2>
+            </div>
+            <span class="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</span>
+        </div>
+        <div class="flex overflow-x-auto hide-scrollbar gap-6 px-6 pb-4">
+            <!-- Film Card 1 -->
+            <div class="flex-none w-[85%] relative rounded-xl overflow-hidden group">
+                <img class="aspect-[9/16] w-full object-cover transition-transform duration-700 group-hover:scale-110" alt="indian bride in red lehenga" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxC4Jm_GxVgv9fpwzfpm7UIP9FPgTqM5EzTg9z5R3q0ObJNS6135JmonHhwrsfKSeQQxbV4nWzLQ3RTOXOexMWAojF_Uzqw4VvUaWmojIUhLeDRhJyzXTIdkpKd02EU9HSV61aXQej9WKScO9_fkYhXtlrr1jmqEpFlIyEEOXxxoLnsskbCB20ANCS2-Z2i8WpRf3HJtGLpoU7vm7KEDRGtegz_AIDDjDJ4YMo7cG414KLEmrMbv82Fee1nf8_zVyTgPjf-i9Nxik">
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent flex flex-col justify-end p-6">
+                    <p class="text-xs font-label uppercase tracking-widest text-primary mb-1">Traditional / Royal</p>
+                    <h3 class="font-headline text-xl font-bold">The Eternal Vow: Kabir & Ananya</h3>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20">
+                        <span class="material-symbols-outlined text-white text-3xl" data-icon="play_arrow">play_arrow</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Film Card 2 -->
+            <div class="flex-none w-[85%] relative rounded-xl overflow-hidden group">
+                <img class="aspect-[9/16] w-full object-cover transition-transform duration-700 group-hover:scale-110" alt="groom during haldi ceremony" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4GOHApNVejNVchclxyCcTRL7AAr8j3uP9EQYUSXCwA6UE2gsvPDg4-g9q97brfeW5V60wNb2Se8FYaH44kSC78shJGUNfpjPgEpesaaBeis8B2flEKjKwqvW7EZRfNG3WHQXMKknsey2E0gD671ApWuz_-4bsLxR0KQsQ2dwPyrvKe8Omyxuh9xi0EoquUn8HoiGsgOBPBYR29aIPeHD8Nn4Q3ee0x9mtYlZOqCpWbWkxrY9jq5P5xHIN9A2FLXUDfLbTH72mTJU">
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent flex flex-col justify-end p-6">
+                    <p class="text-xs font-label uppercase tracking-widest text-primary mb-1">Candid / Modern</p>
+                    <h3 class="font-headline text-xl font-bold">Laughter & Light: Rohan & Siya</h3>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20">
+                        <span class="material-symbols-outlined text-white text-3xl" data-icon="play_arrow">play_arrow</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Moments (Asymmetric Grid) -->
+    <section class="py-20 bg-surface-container-low relative">
+        <div class="px-6 mb-12">
+            <span class="text-primary font-label text-[10px] uppercase tracking-[0.3em]">Photography</span>
+            <h2 class="font-headline text-3xl font-bold mt-2">Wedding Moments</h2>
+        </div>
+        <div class="grid grid-cols-2 gap-4 px-6">
+            <div class="space-y-4">
+                <div class="rounded-lg overflow-hidden h-64 relative group">
+                    <img class="w-full h-full object-cover" alt="henna design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUmQ9ItMbhWi1q5QRC7piNg9C4RVrCUM_qP57GbmTZOEhdfR3MVfxcyusOIAqCAt6ocDctBL1977KYaY3qEdVuLEf2ylB2nNbkcy3BOzTqSVpRg05sL4TUtKS5_mb1vRESjD5n6eBoObLVdOtXTsPho3UBjpO1UBUQyn-c_ZFGnudwVTojuD7Jvk-mXzkt_oSRKPdQ2gA4LUd6OGjk18ipLPDYCF6uET1v17xedPRH5h4j8CXCNIkXEr8zDJqa1tjeGMew5TfAF-U">
+                </div>
+                <div class="rounded-lg overflow-hidden h-48 relative group">
+                    <img class="w-full h-full object-cover" alt="wedding garlands" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfI6WwLPvm6PAj7TyQQcVHUcqu6h_-Dy6bddnkwmnpAbMNS1Ge2jAfpfoR-KROSRoTlq3gf-tbr0gyHeWuUfh3YMB9Ou5t8GDjXaewbprjNaqI3SRdoSXSB2K7u8MHOHpgA6LO31-sjLnbIPtZ9qPTP7qgIpbY-oKuk88d01dJuI7YchaPAGOa-e5sUkxuYnPFWCPDCvLiENujd7XNoyV4PVxIVn-r_uZEtUP2STSLno-q7DrBlOG8OTWuWjJcbbFFnvUGwSv96V8">
+                </div>
+            </div>
+            <div class="space-y-4 pt-8">
+                <div class="rounded-lg overflow-hidden h-48 relative group">
+                    <img class="w-full h-full object-cover" alt="groom sherwani" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY2hS65K8nhk7EKQxbU8dsYnZh9Nn5_X247kwdiRCp3Wyablw_jKImrAhzcjJKT640QfKrNNnAXiYtqer-OF3WNSpxbQQU09zmGdJgnN3ex_vGTkTT60U-lmJ3aqAnyZEUs789c8BA_7HYhqPsB-bdLsVq7XWniFhFtcXKc4tPj8poEru6QDs7-st5LV0KN4OIfaGH1Mr5KOTwMsMb3z18qPk0RvatWxRva3yRBWdbT4q6fNQNf28nR3BZE7NVevsBIu2K3j4tbfM">
+                </div>
+                <div class="rounded-lg overflow-hidden h-64 relative group">
+                    <img class="w-full h-full object-cover" alt="royal palace night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGspwSnfu18TeFgSGfFg-AnIRY6GL4O64IPq0p6ZOR0oEcd-JWjHjs9QrW-BPJl36nmrrPP9obp_et1Li5K5SpfhcHXNn_7l1eRtfSuSCb610Vs92l1To7Ewi2UEEWOWV6FZadWGlRcTDRhzv9uyMo5Mq6bgAL-X6MGBj_De2QPPWeailU9p-Sv2gp8juFllPmJByLNFprhRGLG1RPSokcEI8FmZZIhPQ92YsT-a0VKZNfuUVRukqUHnv_Xy2GqDpuEexNz3FnqFI">
+                </div>
+            </div>
+        </div>
+        <div class="px-6 mt-12 text-center">
+            <button class="text-on-surface border border-outline-variant/30 px-8 py-3 rounded-full font-label text-[10px] uppercase tracking-widest hover:border-primary transition-colors">
+                View Full Gallery
+            </button>
+        </div>
+    </section>
+
+    <!-- Bespoke Albums & Frames -->
+    <section class="py-20 px-6">
+        <div class="mb-12 text-center">
+            <span class="text-primary font-label text-[10px] uppercase tracking-[0.3em]">Tangible Memories</span>
+            <h2 class="font-headline text-3xl font-bold mt-2">The Heirloom Collection</h2>
+        </div>
+        <div class="space-y-12">
+            <!-- Albums -->
+            <div class="bg-surface-container-high rounded-3xl overflow-hidden flex flex-col">
+                <img class="h-64 w-full object-cover" alt="wedding album" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs_a4e8rjWPLJz8o8HW0uKj5GY6mn6Pq2LwB_yEEK_PyYOcn5hEwCyDMsUUvwhHBcZfS5_3zRwZH5d-0F3uuDGCectx_eVSWchgc9s2uLiJK7I5pqYDFaWbiyDxpAttpYOZZmRnSLoKZ3rwzqRwPpbVHGz6shtQ75RK3y2H0Q4A5imtUWTB-rmCrTpESVMt3nxxO969OLHqGvbdlpde7f3yIrk3fRhZ1ELQKX3745TEVECcrtu-l-OmfO3tZ-K7dFgjB3BW2z6OZ4">
+                <div class="p-8">
+                    <h3 class="font-headline text-2xl font-bold mb-4">Bespoke Albums</h3>
+                    <p class="text-on-surface-variant font-body mb-6 leading-relaxed">Handcrafted Italian leather albums with archival-grade paper, designed to last for generations.</p>
+                    <div class="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest cursor-pointer">
+                        <span>Explore Textures</span>
+                        <span class="material-symbols-outlined text-sm">north_east</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Frames -->
+            <div class="bg-surface-container-high rounded-3xl overflow-hidden flex flex-col">
+                <img class="h-64 w-full object-cover" alt="canvas portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4bD8GMkh8Ff3yFdv29hyTlyNPf6NuLkjdh9qKkOaYX3rTse1VBebMxfcGMMZtl4wuvlGuEJ-Oxouk8EbRZUQ1VW6-gD44bwePm6Zsnss_-oOaUS73N8LXdHyT9ZDPdFtVClzqDDD3tNy7NjD068Ib-Js66XF-mYsINnMyx-1Ue3SmWdNiBJpDm6qqLMzzf4Zrz-kOgzGEk3b6Ri8hj6QtJ1NVAcGq-SxkP-oMDdAfHi0iMj9ahE6bo3hG0EG8ae8CzKJ1mHC_ZVg">
+                <div class="p-8">
+                    <h3 class="font-headline text-2xl font-bold mb-4">Handcrafted Frames</h3>
+                    <p class="text-on-surface-variant font-body mb-6 leading-relaxed">Museum-grade archival framing options including deep-set canvases and premium acrylic finishes.</p>
+                    <div class="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest cursor-pointer">
+                        <span>View Finishes</span>
+                        <span class="material-symbols-outlined text-sm">north_east</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Collections (Pricing) -->
+    <section class="py-20 bg-surface-container-lowest">
+        <div class="px-6 mb-12">
+            <span class="text-primary font-label text-[10px] uppercase tracking-[0.3em]">Pricing & Plans</span>
+            <h2 class="font-headline text-3xl font-bold mt-2">Wedding Collections</h2>
+        </div>
+        <div class="px-6 flex overflow-x-auto hide-scrollbar gap-6 pb-8">
+            <!-- Package 1 -->
+            <div class="flex-none w-[80%] bg-surface-container border border-outline-variant/10 p-8 rounded-3xl relative">
+                <h3 class="font-headline text-xl font-bold mb-1">Essential</h3>
+                <div class="text-3xl font-black text-primary mb-6">Basic<span class="text-sm font-normal text-on-surface-variant ml-2">/ event</span></div>
+                <ul class="space-y-4 mb-8 text-sm text-on-surface-variant">
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 6 Hours Coverage</li>
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> High-Res Photos</li>
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Online Gallery</li>
+                </ul>
+                <button class="w-full py-3 border border-outline-variant rounded-full font-label text-xs uppercase tracking-widest">Select Plan</button>
+            </div>
+            <!-- Package 2 - Featured -->
+            <div class="flex-none w-[80%] bg-primary-container p-8 rounded-3xl relative shadow-[0_20px_50px_rgba(139,0,0,0.3)]">
+                <div class="absolute -top-3 right-8 bg-on-background text-primary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Most Popular</div>
+                <h3 class="font-headline text-xl font-bold mb-1">Heirloom</h3>
+                <div class="text-3xl font-black text-on-background mb-6">Gold<span class="text-sm font-normal text-on-background/70 ml-2">/ event</span></div>
+                <ul class="space-y-4 mb-8 text-sm text-on-background/90">
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-on-background text-lg">check_circle</span> Full Day Coverage</li>
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-on-background text-lg">check_circle</span> 5 Min Cinematic Film</li>
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-on-background text-lg">check_circle</span> 12" Handcrafted Album</li>
+                </ul>
+                <button class="w-full py-3 bg-on-background text-primary-container rounded-full font-label text-xs uppercase tracking-widest font-bold">Select Plan</button>
+            </div>
+            <!-- Package 3 -->
+            <div class="flex-none w-[80%] bg-surface-container border border-outline-variant/10 p-8 rounded-3xl relative">
+                <h3 class="font-headline text-xl font-bold mb-1">Royal Legacy</h3>
+                <div class="text-3xl font-black text-primary mb-6">Platinum<span class="text-sm font-normal text-on-surface-variant ml-2">/ event</span></div>
+                <ul class="space-y-4 mb-8 text-sm text-on-surface-variant">
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Multi-Day Coverage</li>
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 15 Min Feature Film</li>
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 2 Parent Albums</li>
+                </ul>
+                <button class="w-full py-3 border border-outline-variant rounded-full font-label text-xs uppercase tracking-widest">Select Plan</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="py-20 px-6 overflow-hidden">
+        <div class="flex items-center gap-4 mb-12">
+            <div class="h-[1px] flex-1 bg-outline-variant/20"></div>
+            <h2 class="font-headline text-2xl font-bold uppercase tracking-widest opacity-50">Testimonials</h2>
+            <div class="h-[1px] flex-1 bg-outline-variant/20"></div>
+        </div>
+        <div class="bg-surface-container-high p-8 rounded-3xl relative">
+            <span class="material-symbols-outlined text-primary-container/20 text-8xl absolute top-4 left-4" data-icon="format_quote">format_quote</span>
+            <p class="font-body text-xl italic text-on-surface leading-relaxed relative z-10">
+                "Darpan Studio didn't just take photos; they captured the emotions we didn't even know we were showing. Looking at our album is like reliving the magic all over again."
+            </p>
+            <div class="mt-8 flex items-center gap-4 relative z-10">
+                <div class="w-12 h-12 rounded-full bg-primary-container/40 flex items-center justify-center font-bold text-primary">S</div>
+                <div>
+                    <p class="font-bold">Shikha & Rahul</p>
+                    <p class="text-xs text-on-surface-variant">Wedding in Lucknow</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-20 bg-surface-container-low px-6">
+        <div class="text-center mb-12">
+            <h2 class="font-headline text-4xl font-black mb-4">Begin Your Legacy</h2>
+            <p class="text-on-surface-variant max-w-xs mx-auto">Tell us about your celebration, and let's create something timeless together.</p>
+        </div>
+        <form id="contact-form" class="space-y-8 max-w-md mx-auto">
+            <div class="relative">
+                <input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 transition-colors placeholder:text-on-surface-variant/40" placeholder="Full Name" type="text" required>
+            </div>
+            <div class="relative">
+                <input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 transition-colors placeholder:text-on-surface-variant/40" placeholder="Email Address" type="email" required>
+            </div>
+            <div class="relative">
+                <input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 transition-colors text-on-surface-variant/40" placeholder="Wedding Date" type="date" required>
+            </div>
+            <div class="relative">
+                <textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 transition-colors placeholder:text-on-surface-variant/40" placeholder="Tell us your story..." rows="3" required></textarea>
+            </div>
+            <button type="submit" class="w-full bg-primary-container py-5 rounded-full font-label text-sm font-bold uppercase tracking-[0.2em] shadow-xl mt-8">Send Inquiry</button>
+        </form>
+        <div class="mt-20 text-center space-y-4">
+            <p class="font-label text-[10px] uppercase tracking-widest text-primary">Visit Our Studio</p>
+            <p class="text-on-surface-variant font-body">Main Civil Lines Road,<br>Gorakhpur, Uttar Pradesh 273001</p>
+            <div class="flex justify-center gap-6 pt-4">
+                <a href="tel:+918354038561"><span class="material-symbols-outlined text-on-surface-variant cursor-pointer">phone_in_talk</span></a>
+                <span class="material-symbols-outlined text-on-surface-variant cursor-pointer">alternate_email</span>
+                <span class="material-symbols-outlined text-on-surface-variant cursor-pointer">map</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#131313] w-full relative py-12 bg-[#0a0a0a] flex flex-col items-center text-center gap-6 px-8 mb-20">
+        <span class="font-['Epilogue'] text-xl font-bold text-red-700">VIVAH</span>
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+            <a class="text-[#e5e2e1]/40 font-['Manrope'] text-xs font-light tracking-wide hover:text-red-500 underline underline-offset-4" href="#">The Portfolio</a>
+            <a class="text-[#e5e2e1]/40 font-['Manrope'] text-xs font-light tracking-wide hover:text-red-500 underline underline-offset-4" href="#">Artist Bio</a>
+            <a class="text-[#e5e2e1]/40 font-['Manrope'] text-xs font-light tracking-wide hover:text-red-500 underline underline-offset-4" href="#">Inquiry</a>
+            <a class="text-[#e5e2e1]/40 font-['Manrope'] text-xs font-light tracking-wide hover:text-red-500 underline underline-offset-4" href="#">Privacy</a>
+        </div>
+        <p class="font-['Manrope'] text-xs font-light tracking-wide text-[#e5e2e1]/50 max-w-xs leading-relaxed">
+            © 2024 VIVAH CINEMATIC HEIRLOOM. ESTABLISHED IN GORAKHPUR, UP.
+        </p>
+    </footer>
 </main>
+
 <!-- BottomNavBar -->
 <div class="bg-[#131313]/90 backdrop-blur-2xl fixed bottom-0 w-full z-50 rounded-t-3xl border-t border-[#e5e2e1]/5 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
-<div class="flex justify-around items-center h-20 pb-safe px-4">
-<div class="flex flex-col items-center justify-center text-[#e5e2e1]/40 hover:text-red-400 transition-colors active:scale-90 transition-all">
-<span class="material-symbols-outlined" data-icon="photo_library" style="">photo_library</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-widest mt-1" style="">Gallery</span>
+    <div class="flex justify-around items-center h-20 pb-safe px-4">
+        <div data-nav="gallery" class="flex flex-col items-center justify-center text-[#e5e2e1]/40 hover:text-red-400 transition-colors active:scale-90 transition-all cursor-pointer">
+            <span class="material-symbols-outlined" data-icon="photo_library">photo_library</span>
+            <span class="font-['Manrope'] text-[10px] uppercase tracking-widest mt-1">Gallery</span>
+        </div>
+        <div data-nav="films" class="flex flex-col items-center justify-center text-[#e5e2e1]/40 hover:text-red-400 transition-colors active:scale-90 transition-all cursor-pointer">
+            <span class="material-symbols-outlined" data-icon="movie_filter">movie_filter</span>
+            <span class="font-['Manrope'] text-[10px] uppercase tracking-widest mt-1">Films</span>
+        </div>
+        <div data-nav="stories" class="flex flex-col items-center justify-center text-[#e5e2e1]/40 hover:text-red-400 transition-colors active:scale-90 transition-all cursor-pointer">
+            <span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+            <span class="font-['Manrope'] text-[10px] uppercase tracking-widest mt-1">Stories</span>
+        </div>
+        <div data-nav="studio" class="flex flex-col items-center justify-center text-red-600 font-bold scale-110 active:scale-90 transition-all cursor-pointer">
+            <span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+            <span class="font-['Manrope'] text-[10px] uppercase tracking-widest mt-1">Studio</span>
+        </div>
+    </div>
 </div>
-<div class="flex flex-col items-center justify-center text-[#e5e2e1]/40 hover:text-red-400 transition-colors active:scale-90 transition-all">
-<span class="material-symbols-outlined" data-icon="movie_filter" style="">movie_filter</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-widest mt-1" style="">Films</span>
-</div>
-<div class="flex flex-col items-center justify-center text-[#e5e2e1]/40 hover:text-red-400 transition-colors active:scale-90 transition-all">
-<span class="material-symbols-outlined" data-icon="auto_stories" style="">auto_stories</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-widest mt-1" style="">Stories</span>
-</div>
-<div class="flex flex-col items-center justify-center text-red-600 font-bold scale-110 active:scale-90 transition-all">
-<span class="material-symbols-outlined" data-icon="location_on" style="">location_on</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-widest mt-1" style="">Studio</span>
-</div>
-</div>
-</div>
-</body></html>
+
+<!-- Main JS -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
