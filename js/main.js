@@ -75,3 +75,73 @@ document.querySelectorAll('[data-plan]').forEach(button => {
         button.href = 'https://wa.me/918354038561?text=' + encodedMessage;
     }
 });
+
+/* ----------------------------------------------------------
+   Mobile Menu Toggle
+---------------------------------------------------------- */
+const menuIcon = document.getElementById('menu-icon');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeMenu = document.getElementById('close-menu');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+if (menuIcon && mobileMenu && closeMenu) {
+    menuIcon.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+        setTimeout(() => {
+            mobileMenu.classList.remove('opacity-0');
+            document.body.style.overflow = 'hidden';
+        }, 10);
+    });
+
+    const closeMobileMenu = () => {
+        mobileMenu.classList.add('opacity-0');
+        setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+        }, 300);
+    };
+
+    closeMenu.addEventListener('click', closeMobileMenu);
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+}
+
+
+/* ----------------------------------------------------------
+   Offer Countdown Timer
+---------------------------------------------------------- */
+function startOfferTimer() {
+    const timerDisplay = document.getElementById('offer-timer');
+    if (!timerDisplay) return;
+
+    let timeRemaining = 10 * 60; // 10 minutes default
+    
+    // Check if there's a saved end time in localStorage for continuity across refreshes
+    const savedEndTime = localStorage.getItem('darpan_offer_end_time');
+    const now = Math.floor(Date.now() / 1000);
+
+    if (savedEndTime && savedEndTime > now) {
+        timeRemaining = savedEndTime - now;
+    } else {
+        localStorage.setItem('darpan_offer_end_time', now + timeRemaining);
+    }
+
+    const interval = setInterval(() => {
+        const minutes = Math.floor(timeRemaining / 60);
+        const seconds = timeRemaining % 60;
+
+        timerDisplay.textContent = \\:\ mins\;
+
+        if (timeRemaining <= 0) {
+            // Reset to 10 minutes when it reaches 0
+            timeRemaining = 10 * 60;
+            localStorage.setItem('darpan_offer_end_time', Math.floor(Date.now() / 1000) + timeRemaining);
+        } else {
+            timeRemaining--;
+        }
+    }, 1000);
+}
+
+document.addEventListener('DOMContentLoaded', startOfferTimer);
+
